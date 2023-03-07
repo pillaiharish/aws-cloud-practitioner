@@ -1,0 +1,36 @@
+# Install in mac
+$ curl "https://awscli.amazonaws.com/AWSCLIV2.pkg" -o "AWSCLIV2.pkg"
+$ sudo installer -pkg AWSCLIV2.pkg -target /
+
+# verify aws installation
+$ which aws
+/usr/local/bin/aws
+
+$ aws --version
+aws-cli/2.11.0 Python/3.11.2 Darwin/21.6.0 exe/x86_64 prompt/off
+
+# Configure aws user: Global user>IAM>Users>harish_******>Create access key also down load the csv. Paste the details below
+$ aws configure
+AWS Access Key ID [None]: AKI**************
+AWS Secret Access Key [None]: isVn********************
+Default region name [None]: ap-south-1
+Default output format [None]: 
+
+# Verify the details
+$ aws iam list-users
+{
+    "Users": [
+        {
+            "Path": "/",
+            "UserName": "harish_******",
+            "UserId": "AID*******************",
+            "Arn": "arn:aws:iam::523887010599:user/harish_******",
+            "CreateDate": "2022-10-21T06:19:00+00:00",
+            "PasswordLastUsed": "2023-03-07T06:25:20+00:00"
+        }
+    ]
+}
+
+# cloudshell is an alternative for terminal cli
+
+
